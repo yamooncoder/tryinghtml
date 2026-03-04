@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <style>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-  </style>
+<head>
+  <!-- Google Fonts go here, OUTSIDE of <style> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
- </head>
-<header>
-  <div class="logo-area">
-    <img src="logo.png" width="30"> 
-    <span>Vertex <strong>Smart Pro</strong></span>
-  </div>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
-  <!-- The Right Side: Buttons and Menu -->
-  <div class="Info">
-    <span>Made by <strong>Yaman</strong></span>
-  </div>
-</header>
- <body>
-   <p> Hello This is my first time Trying <strong>Html</strong>!</p>
-   <p>Let me tell you how I started what inspired and how im learning</p>
-   <p>How i started</p>
-   <p>-I started just asking chatgpt to generate me codes but now today im learning how to code Myself!</p>
-   <p>Right now im currently learning on <a href="coddy.tech"> Coddy</a></p>
+  <style>
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      margin: 20px;
+      text-align: left; /* This ensures everything stays left-aligned */
+    }
+
+    header {
+      display: flex; /* This "pushes" items to be side-by-side */
+      justify-content: space-between; /* Space between logo and Yaman */
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Space between image and text */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-area">
+      <img src="logo.png" width="30" alt="Logo"> 
+      <span>Vertex <strong>Smart Pro</strong></span>
+    </div>
+
+    <div class="Info">
+      <span>Made by <strong>Yaman</strong></span>
+    </div>
+  </header>
+
+  <p>Hello! This is my first time trying <strong>HTML</strong>!</p>
+  <p>Let me tell you how I started, what inspired me, and how I'm learning.</p>
+  
+  <h3>How I started</h3>
+  <p>- I started just asking ChatGPT to generate code, but today I'm learning how to code myself!</p>
+  <p>Right now I'm currently learning on <a href="https://coddy.tech">Coddy</a></p>
+</body>
+</html>
