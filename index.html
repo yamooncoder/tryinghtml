@@ -1,27 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yamooncoder — Versions</title>
+
+  <!-- Comfortaa font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Comfortaa', sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-    .container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 400px; }
-    h1 { color: #6c5ce7; margin-bottom: 10px; }
-    p { color: #666; margin-bottom: 30px; }
-    .version-link { 
-      display: block; 
-      background: #efecff; 
-      color: #6c5ce7; 
-      text-decoration: none; 
-      padding: 15px; 
-      margin: 10px 0; 
-      border-radius: 10px; 
-      font-weight: bold;
-      transition: 0.3s;
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      background: #f4f7f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
-    .version-link:hover { background: #6c5ce7; color: white; transform: translateY(-3px); }
-    .version-date { display: block; font-size: 0.8rem; font-weight: normal; opacity: 0.8; }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 420px;
+      max-width: 100%;
+    }
+    h1 {
+      color: #6c5ce7;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .version-link {
+      display: block;
+      background: #efecff;
+      color: #6c5ce7;
+      text-decoration: none;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+    .version-link:hover {
+      background: #6c5ce7;
+      color: white;
+      transform: translateY(-3px);
+    }
+    .version-date {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+    .error {
+      color: #c0392b;
+      background: #ffe9e6;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      margin-top: 10px;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -29,26 +78,39 @@
   <div class="container">
     <h1>yamooncoder</h1>
     <p>Choose the version to view:</p>
-    <div id="version-menu">
-      <!-- Versions will appear here automatically -->
+
+    <div id="version-menu"></div>
+
+    <div id="errorBox" class="error">
+      Could not load <b>versions.json</b>. Make sure it is in the same place as index.html.
     </div>
   </div>
 
   <script>
-    // Just add your new versions to this list!
-    const myVersions = [
-      { id: "1.0", date: "March 4, 2024", file: "v1.html" },
-      { id: "1.1", date: "March 5, 2024", file: "v1_1.html" }
-    ];
+    // Load versions automatically from versions.json
+    fetch('versions.json')
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to load versions.json");
+        return res.json();
+      })
+      .then(versions => {
+        const menu = document.getElementById('version-menu');
 
-    const menu = document.getElementById('version-menu');
-    myVersions.forEach(v => {
-      const btn = document.createElement('a');
-      btn.className = 'version-link';
-      btn.href = v.file;
-      btn.innerHTML = `Version ${v.id} <span class="version-date">${v.date}</span>`;
-      menu.appendChild(btn);
-    });
+        // Optional: show newest first (if your JSON is newest-first already, keep it)
+        // versions.reverse();
+
+        versions.forEach(v => {
+          const btn = document.createElement('a');
+          btn.className = 'version-link';
+          btn.href = v.file;
+          btn.innerHTML = `${v.name}<span class="version-date">${v.date}</span>`;
+          menu.appendChild(btn);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('errorBox').style.display = 'block';
+      });
   </script>
 
 </body>
