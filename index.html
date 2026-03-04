@@ -4,100 +4,52 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com" rel="stylesheet">
-
   <style>
-    body {
-      font-family: 'Comfortaa', sans-serif;
-      margin: 0;
-      padding: 40px;
-      background-color: #fafafa;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      width: 100%;
-      max-width: 700px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 15px;
-      border-bottom: 2px solid #eee;
-      margin-bottom: 30px;
-    }
-
-    .content-box {
-      max-width: 700px; /* Limits width so lines aren't too long */
-      line-height: 1.8;
-    }
-
-    .progress-card {
-      background: #ffffff;
-      border-left: 5px solid #6c5ce7;
-      padding: 20px;
-      margin-top: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .tag-badge {
-      background: #efecff;
-      color: #6c5ce7;
-      padding: 4px 10px;
-      border-radius: 5px;
-      font-family: monospace;
+    body { font-family: 'Comfortaa', sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 400px; }
+    h1 { color: #6c5ce7; margin-bottom: 10px; }
+    p { color: #666; margin-bottom: 30px; }
+    .version-link { 
+      display: block; 
+      background: #efecff; 
+      color: #6c5ce7; 
+      text-decoration: none; 
+      padding: 15px; 
+      margin: 10px 0; 
+      border-radius: 10px; 
       font-weight: bold;
-      font-size: 0.9rem;
-      margin-right: 5px;
+      transition: 0.3s;
     }
-
-    h3 { color: #6c5ce7; margin-bottom: 10px; }
-    p { margin-bottom: 20px; } /* Adds space between paragraph chunks */
+    .version-link:hover { background: #6c5ce7; color: white; transform: translateY(-3px); }
+    .version-date { display: block; font-size: 0.8rem; font-weight: normal; opacity: 0.8; }
   </style>
 </head>
-
 <body>
-  <header>
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="logo.png" width="30" alt="Logo"> 
-      <span><strong>yamooncoder</strong></span>
-    </div>
-    <span>HTML Level: <strong>Beginner</strong></span>
-  </header>
 
-  <div class="content-box">
-    <h3>The Shift from AI to Coding</h3>
-    
-    <p>
-      When I first discovered AI, I thought I had found a shortcut to building the web. I would simply ask ChatGPT to generate code, copy it, and paste it. It worked,
-      but I felt like I was looking at a language I couldn't actually speak. I realized that to truly create, I needed to understand the foundation myself.
-    </p>
-
-    <p>
-      That is when I started my journey on <a href="https://coddy.tech" style="color: #6c5ce7; text-decoration: none; font-weight: bold;">Coddy</a>. Instead of 
-      letting AI do the heavy lifting, I now use it as a guide to help me navigate the basics. I'm moving away from just "generating" and moving toward "building" with my own hands.
-    </p>
-
-    <p>
-      By breaking down the code line by line, I'm finally learning how to structure a page 
-      correctly. It’s a challenge, but seeing my own code come to life is much more satisfying than just hitting copy and paste.
-    </p>
-
-    <!-- Progress Section -->
-    <div class="progress-card">
-      <h3>Skills I'm Mastering:</h3>
-      <p>Currently learning how to structure and style pages:</p>
-      <div>
-        <span class="tag-badge">&lt;body&gt;</span>
-        <span class="tag-badge">&lt;strong&gt;</span>
-        <span class="tag-badge">Fonts</span>
-        <span class="tag-badge">Links</span>
-        <span class="tag-badge">Structure</span>
-      </div>
+  <div class="container">
+    <h1>yamooncoder</h1>
+    <p>Choose the version to view:</p>
+    <div id="version-menu">
+      <!-- Versions will appear here automatically -->
     </div>
   </div>
+
+  <script>
+    // Just add your new versions to this list!
+    const myVersions = [
+      { id: "1.0", date: "March 4, 2024", file: "v1.html" },
+      { id: "1.1", date: "March 5, 2024", file: "v1_1.html" }
+    ];
+
+    const menu = document.getElementById('version-menu');
+    myVersions.forEach(v => {
+      const btn = document.createElement('a');
+      btn.className = 'version-link';
+      btn.href = v.file;
+      btn.innerHTML = `Version ${v.id} <span class="version-date">${v.date}</span>`;
+      menu.appendChild(btn);
+    });
+  </script>
 
 </body>
 </html>
