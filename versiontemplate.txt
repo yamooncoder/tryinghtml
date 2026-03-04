@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
+  <style>
+    body { font-family: 'Comfortaa', sans-serif; padding: 40px; line-height: 1.6; max-width: 700px; margin: auto; }
+    .nav { margin-bottom: 20px; }
+    .back-btn { text-decoration: none; color: #6c5ce7; font-weight: bold; }
+    .content { border-top: 2px solid #eee; padding-top: 20px; }
+    .highlight { color: #6c5ce7; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html" class="back-btn">← Back to Version Selection</a>
+  </div>
+
+  <div class="content">
+    <h1>Version 1.0</h1>
+    <p>This is where you describe your progress. For example:</p>
+    <p>Today I learned how to use <span class="highlight">bolding</span> and <span class="highlight">body tags</span> on Coddy!</p>
+  </div>
+</body>
+</html>
