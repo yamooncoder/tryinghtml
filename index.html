@@ -1,52 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Google Fonts go here, OUTSIDE of <style> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Comfortaa', sans-serif;
-      margin: 20px;
-      text-align: left; /* This ensures everything stays left-aligned */
+      margin: 0;
+      padding: 40px;
+      background-color: #fafafa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     header {
-      display: flex; /* This "pushes" items to be side-by-side */
-      justify-content: space-between; /* Space between logo and Yaman */
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #eee;
+      margin-bottom: 30px;
     }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 10px; /* Space between image and text */
+    .content-box {
+      max-width: 700px; /* Limits width so lines aren't too long */
+      line-height: 1.8;
     }
+
+    .progress-card {
+      background: #ffffff;
+      border-left: 5px solid #6c5ce7;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .tag-badge {
+      background: #efecff;
+      color: #6c5ce7;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-right: 5px;
+    }
+
+    h3 { color: #6c5ce7; margin-bottom: 10px; }
+    p { margin-bottom: 20px; } /* Adds space between paragraph chunks */
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo-area">
+    <div style="display: flex; align-items: center; gap: 10px;">
       <img src="logo.png" width="30" alt="Logo"> 
-      <span>HTML <strong>Attemp</strong></span>
+      <span><strong>yamooncoder</strong></span>
     </div>
-
-    <div class="Info">
-      <span>Made by <strong>yamooncoder</strong></span>
-    </div>
+    <span>HTML Level: <strong>Beginner</strong></span>
   </header>
 
-  <p>Hello! This is my first time trying <strong>HTML</strong>!</p>
-  <p>Let me tell you how I started, what inspired me, and how I'm learning.</p>
-  
-  <h3>How I started</h3>
-  <p>- I started just asking ChatGPT to generate code, but today I'm learning how to code myself!</p>
-  <p>Right now I'm currently learning on <a href="https://coddy.tech">Coddy</a></p>
+  <div class="content-box">
+    <h3>The Shift from AI to Coding</h3>
+    
+    <p>
+      When I first discovered AI, I thought I had found a shortcut to building the web. I would simply ask ChatGPT to generate code, copy it, and paste it. It worked,
+      but I felt like I was looking at a language I couldn't actually speak. I realized that to truly create, I needed to understand the foundation myself.
+    </p>
+
+    <p>
+      That is when I started my journey on <a href="https://coddy.tech" style="color: #6c5ce7; text-decoration: none; font-weight: bold;">Coddy</a>. Instead of 
+      letting AI do the heavy lifting, I now use it as a guide to help me navigate the basics. I'm moving away from just "generating" and moving toward "building" with my own hands.
+    </p>
+
+    <p>
+      By breaking down the code line by line, I'm finally learning how to structure a page 
+      correctly. It’s a challenge, but seeing my own code come to life is much more satisfying than just hitting copy and paste.
+    </p>
+
+    <!-- Progress Section -->
+    <div class="progress-card">
+      <h3>Skills I'm Mastering:</h3>
+      <p>Currently learning how to structure and style pages:</p>
+      <div>
+        <span class="tag-badge">&lt;body&gt;</span>
+        <span class="tag-badge">&lt;strong&gt;</span>
+        <span class="tag-badge">Fonts</span>
+        <span class="tag-badge">Links</span>
+        <span class="tag-badge">Structure</span>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
