@@ -1,3 +1,4 @@
 [
-  { "name": "Latest Version", "file": "versions/version1.0.html", "date": "March 1, 2026" }
+  { "name": "Version 1.0", "file": "versions/version1.0.html", "date": "March 1, 2026" }
+  { "name": "Latest Version", "file": "versions/version1.1.html", "date": "March 30, 2026" }
 ]
